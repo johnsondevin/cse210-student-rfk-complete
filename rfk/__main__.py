@@ -9,7 +9,11 @@ from game.handle_collisions_action import HandleCollisionsAction
 from game.move_actors_action import MoveActorsAction
 from game.input_service import InputService
 from game.output_service import OutputService
-from asciimatics.screen import Screen 
+from game.change_position import Change
+from asciimatics.screen import Screen
+
+
+from rfk.game import change_position 
 
 def main(screen):
 
@@ -28,6 +32,9 @@ def main(screen):
     robot.set_text("#")
     robot.set_position(position)
     cast["robot"] = [robot]
+
+    if random.randint(0, 50) == 50:
+        Change.execute()
 
     artifacts = []
     for n in range(constants.ARTIFACTS):
