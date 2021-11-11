@@ -33,8 +33,6 @@ def main(screen):
     robot.set_position(position)
     cast["robot"] = [robot]
 
-    if random.randint(0, 50) == 50:
-        Change.execute()
 
     artifacts = []
     for n in range(constants.ARTIFACTS):
@@ -49,6 +47,9 @@ def main(screen):
         artifact.set_position(position)
         artifacts.append(artifact)
     cast["artifact"] = artifacts
+
+    if random.randint(0, 50) == 50:
+        Change.execute(artifacts)
 
     # create the script {key: tag, value: list}
     script = {}
