@@ -13,7 +13,7 @@ from game.change_position import Change
 from asciimatics.screen import Screen
 
 
-from rfk.game import change_position 
+from game.change_position import Change
 
 def main(screen):
 
@@ -58,9 +58,9 @@ def main(screen):
     handle_collisions_action = HandleCollisionsAction()
     draw_actors_action = DrawActorsAction(output_service)
     change_position = Change()
-    
+
     script["input"] = [control_actors_action]
-    script["update"] = [move_actors_action, handle_collisions_action]
+    script["update"] = [change_position, move_actors_action, handle_collisions_action]
     script["output"] = [draw_actors_action]
 
     # start the game
